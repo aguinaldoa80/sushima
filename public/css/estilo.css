@@ -1,0 +1,49 @@
+
+body {
+    min-height: 100%;
+    padding-top: 60px;
+}
+
+.bellAguinaldo{
+    color: red;
+    font-size: 1.6em;
+}
+.aguinaldo{
+    font-family: Arial;
+    font-weight: normal;
+    font-style: normal;
+}
+.navbar-default {
+    background-color: #f7ecb5;
+    border-color: #d3e0e9
+}
+.panel-heading
+{
+    background-color:#ffff00;
+    font-family: 'Nimbus Sans L';
+    font-weight: normal;
+    font-style: normal;
+}
+.navbar-font-color {
+    color: red;
+}
+#ntext{
+    color: red;
+}
+.ocutar{
+    display: none;
+}
+.glyphicon2 {
+    font-size: 1.4em;
+}
+a:hover {
+text-decoration: underline;
+color: #DD127B;
+
+}
+.notification{
+    color: #D14;
+}
+.nav .navbar-nav li a:hover {
+    color: grey !important;
+}

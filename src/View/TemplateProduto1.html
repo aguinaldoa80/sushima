@@ -1,0 +1,391 @@
+{% extends('layout/layout.php')%}
+{% block scripthead %}
+<script src="/js/dataTables.buttons.min.js" type="text/javascript"></script>
+<script src="/js/buttons.html5.min.js" type="text/javascript"></script>
+<script src="/js/buttons.print.min.js" type="text/javascript"></script>
+<script src="/js/jszip.min.js" type="text/javascript"></script>
+<script src="/js/pdfmake.min.js" type="text/javascript"></script>
+<script src="/js/vfs_fonts.js" type="text/javascript"></script>
+{% endblock %}
+{% block panel %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="panel panel-info">
+            <div class="panel-heading text-center"><strong>Área do administrador - Serviço Social </strong><span class="pull-right mensagem"/></div>
+            <div class="panel-body">
+                <div id="cuadro2" class="ocutar col-md-12">
+
+                    <form id="frmCadastro" class="form-horizontal">
+                        <div class="form-group">
+                            <h3 class="col-sm-offset-2 col-sm-8 text-center">Formulário de Registro de Usuários</h3>
+                        </div>
+                        <input type="hidden" id="idusuario" name="idusuario" value="0">
+                        <input type="hidden" id="option" name="option" value="registrar">
+                        <div class="form-group">
+                            <label for="nome" class="col-md-2 control-label">Nome</label>
+                            <div class="col-sm-8"><input id="nome" name="nome" type="text" class="form-control" autofocus></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="apelido" class="col-md-2 control-label">Apelido</label>
+                            <div class="col-sm-8"><input id="apelido" name="apelido" type="text" class="form-control"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dni" class="col-md-2 control-label">DNI</label>
+                            <div class="col-sm-8"><input id="dni" name="dni" type="text" class="form-control" maxlength="6"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-8">
+                                <input type="submit" class="btn btn-primary" value="Salvar">
+                                <input id="btn_listar" type="button" class="btn btn-primary" value="Listar">
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div id="cuadro1" class="table-responsive">
+                    <div class="col-sm-offset-2 col-sm-8 text-center">
+                        <p class="mensagem2"></p>
+                    </div>
+                    <table id="example" class="table table-sm table-striped table-condensed table-bordered table-hover" cellspacing="0" width="100%">
+                        <thead>
+                            <tr style="background-color: #CCCCCC">
+                                <th class="text-center">First name</th>
+                                <th class="text-center">Last name</th>
+                                <th class="text-center">Position</th>
+                                <th class="text-center">Office</th>
+                                <th class="text-center">Start date</th>
+                                <th class="text-center">Salary</th>
+                                <th class="text-center">Ações</th>
+                            </tr>
+                        </thead>
+                        <!--                        <tfoot>
+                                                    <tr>
+                                                        <th>First name</th>
+                                                        <th>Last name</th>
+                                                        <th>Position</th>
+                                                        <th>Office</th>
+                                                        <th>Start date</th>
+                                                        <th>Salary</th>
+                                                        <th>Ações</th>
+                                                    </tr>
+                                                </tfoot>-->
+                    </table>
+                    <!--<div id ='ag' class='d1'>Texto qualquer</div><button id='b1'>Mudar o Texto por ajax</button>-->
+                </div>
+                <div>
+                    <form id="frmEliminarUsuario" action="" method="POST">
+                        <input type="hidden" id="idusuario" name="idusuario" value="" />
+                        <input type="hidden" id="option" name="option" value="eliminar" />
+                        <!-- Modal -->
+                        <div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="modalEliminarLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        <h4 class="modal-title" id="modalEliminarLabel">Eliminar Usuário</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <strong>Confirma exclusão do usuário ?</strong>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" id="eliminarusuario" class="btn btn-primary" data-dismiss="modal">Aceitar</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts%}
+<script type="text/javascript" language="javascript" class="init">
+
+    var idioma_portugues = {
+        "sEmptyTable": "Nenhum registro encontrado",
+        "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+        "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+        "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+        "sInfoPostFix": "",
+        "sInfoThousands": ".",
+        "sLengthMenu": "Mostrar _MENU_ resultados por página",
+        "sLoadingRecords": "Carregando...",
+        "sProcessing": "Processando...",
+        "sZeroRecords": "Nenhum registro encontrado",
+        "sSearch": "Pesquisar",
+        "oPaginate": {
+            "sNext": "Próximo",
+            "sPrevious": "Anterior",
+            "sFirst": "Primeiro",
+            "sLast": "Último"
+        },
+        "oAria": {
+            "sSortAscending": ": Ordenar colunas de forma ascendente",
+            "sSortDescending": ": Ordenar colunas de forma descendente"
+        }
+
+    }
+    $(document).ready(function () {
+//        listar();
+//    });
+        var bProcess = false;
+        var selected = [];
+//    var listar = function () {
+//        $("#cuadro2").slideUp("slow");
+//        $("#cuadro1").slideDown("slow");
+        var table = $('#example').DataTable({
+            "destroy": true,
+            "responsive": true,
+            "processing": true,
+            "serverSide": true,
+            "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+            "ajax": "scripts/server_processing.php",
+            "pagingType": "full_numbers",
+            "language": idioma_portugues,
+            "dom": "<'row'"
+                    + "<'col-md-5'l><'col-md-4'B><'col-md-3'f>"
+                    + ">"
+                    + "<rt>"
+                    + "<'row'"
+                    + "<'col-sm-6 col-md-6 col-lg-6'i>"
+                    + "p>",
+            "buttons": [
+                {
+                    "text": "<i class=' btn btn-primary fa fa-user-plus'></i>",
+                    "titleAttr": "Agregar Usuário",
+                    "action": function () {
+                        agregar_nuevo_usuario();
+                    }
+                },
+                {
+                    "extend": "excelHtml5",
+                    "text": "<i class=' btn btn-success fa fa-file-excel-o'></i>",
+                    "titleAttr": "Exportar para Excel"
+                },
+                {
+                    "extend": "csvHtml5",
+                    "text": "<i class='btn btn-info fa fa-file-text-o'></i>",
+                    "titleAttr": "Exportar para CSV"
+                },
+                {
+                    "extend": "pdfHtml5",
+                    "text": "<i class='btn btn-warning fa fa-file-pdf-o'></i>",
+                    "titleAttr": "Exportar para PDF"
+                }
+
+            ],
+            "columns": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                {
+                    "targets": 6,
+                    "orderable": false,
+//                    "defaultContent": "<div id ='ag' class='d1'>Texto qualquer</div><button id='b1'>Mudar o Texto por ajax</button>"
+                    "defaultContent": "<button id='editar' type='button' class='editar btn btn-xs btn-primary'><i class='fa fa-pencil-square-o'></i></button> <button id='eliminar' type='button' class='btn btn-xs btn-danger' data-toggle='modal' data-target='#modalEliminar'><i class='fa fa-trash-o'></i></button>"
+                }
+            ]
+
+        });
+//        setInterval(function () {
+//            bProcess = false;
+//            table.ajax.reload();
+//        }, 10000);
+        var agregar_nuevo_usuario = function () {
+            limpaDados();
+            $("#cuadro2").slideDown("slow");
+            $("#cuadro1").slideUp("slow");
+        }
+        var buca = function (data) {
+            return !data ?
+                    '' :
+                    typeof data === 'string' ?
+                    data
+                    .replace(/έ/g, 'ε')
+                    .replace(/ύ/g, 'υ')
+                    .replace(/ό/g, 'ο')
+                    .replace(/ώ/g, 'ω')
+                    .replace(/ά/g, 'α')
+                    .replace(/ί/g, 'ι')
+                    .replace(/ή/g, 'η')
+                    .replace(/\n/g, ' ')
+                    .replace(/[áÁ]/g, 'a')
+                    .replace(/[éÉ]/g, 'e')
+                    .replace(/[íÍ]/g, 'i')
+                    .replace(/[óÓ]/g, 'o')
+                    .replace(/[úÚ]/g, 'u')
+                    .replace(/ê/g, 'e')
+                    .replace(/î/g, 'i')
+                    .replace(/ô/g, 'o')
+                    .replace(/è/g, 'e')
+                    .replace(/ï/g, 'i')
+                    .replace(/ü/g, 'u')
+                    .replace(/ã/g, 'a')
+                    .replace(/õ/g, 'o')
+                    .replace(/ç/g, 'c')
+                    .replace(/ì/g, 'i') :
+                    data;
+        };
+        function dataReplace(data) {
+            return data
+                    .replace(/\n/g, ' ')
+                    .replace(/[áàäâ]/g, 'a')
+                    .replace(/[éèëê]/g, 'e')
+                    .replace(/[íìïî]/g, 'i')
+                    .replace(/[óòöô]/g, 'o')
+                    .replace(/[úùüû]/g, 'u');
+        }
+        $('#example_filter label input').keyup(function () {
+//            alert(dataReplace($('#example_filter label input').val()));
+//            $(this).val(dataReplace($(this).val()));
+        });
+        $('.form-horizontal #dni').keyup(function () {
+//            alert(dataReplace($('#example_filter label input').val()));
+            $(this).val(dataReplace($(this).val()));
+            table.search(dataReplace($(this).val()));
+            doRefresh();
+        });
+//        obter_dados("#example tbody", table);
+//    };
+        var obter_dados = function (tbody, table) {
+//        $(tbody).on("click", "button.editar", function () {
+//            var data = table.row($(this).parents("tr")).data();
+//            console.log(data);
+//        })
+            $('#example tbody').on('click', '#caralho', function () {
+                var data = table.row($(this).parents('tr')).data();
+                console.log(data);
+//                alert(data['DT_RowId'] + "'s salary is: " + data[ 2 ]);
+                var idusuario = $("#idusuario").val(data.DT_RowId),
+                        nome = $("#nome").val(data[0]);
+            });
+        }
+        $('#example tbody').on('click', '#editar', function () {
+            var data = table.row($(this).parents('tr')).data();
+            console.log(data);
+//            alert(data['DT_RowId'] + "'s salary is: " + data[ 2 ]);
+            var idusuario = $("#idusuario").val(data.DT_RowId),
+                    nome = $("#nome").val(data[0]),
+                    apelido = $("#apelido").val(data.DT_RowId);
+            $("#cuadro2").slideDown("slow");
+            $("#cuadro1").slideUp("slow");
+        });
+        $('#example tbody').on('click', '#eliminar', function () {
+            var data = table.row($(this).parents('tr')).data();
+            console.log(data);
+//            alert(data['DT_RowId'] + "'s salary is: " + data[ 2 ]);
+            var idusuario = $("#frmEliminarUsuario #idusuario").val(data.DT_RowId);
+        });
+        function mostra_message(informacao) {
+            var texto = "";
+            var cor = "";
+            if (informacao.resposta == 'ok') {
+                texto = "<strong>Certo!</strong>Cadastro realizado com sucesso.";
+                cor = "#379911";
+            } else if (informacao.resposta == 'error') {
+                texto = "<strong>Erro!</strong>Não efetuou a consulta.";
+                cor = "#c9302c";
+            } else if (informacao.resposta == 'existe') {
+                texto = "<strong>Informação!</strong>O usuário já existe.";
+                cor = "#5b94c5";
+            } else if (informacao.resposta == 'vazio') {
+                texto = "<strong>Advertência!</strong>Informar todos os campos.";
+                cor = "#ddb11d";
+            }
+            $(".mensagem").html(texto).css({"color": cor});
+            $(".mensagem").fadeOut(5000, function () {
+                $(this).html("");
+                $(this).fadeIn(3000);
+            });
+        }
+        function limpaDados() {
+            $("#option").val("registrar");
+            $("#apelido").val("");
+            $("#nome").val("");
+        }
+        $("#frmEliminarUsuario #eliminarusuario").on('click', function () {
+            var idusuario = $("#frmEliminarUsuario #idusuario").val();
+            var option = $("#frmEliminarUsuario #option").val();
+            $.ajax({
+                method: "POST",
+                url: "/manageusers",
+                data: {"idusuario": idusuario, "option": option}
+            }).done(function (info) {
+                var jsoninfo = JSON.parse(info);
+                mostra_message(info);
+                limpaDados();
+                doRefresh();
+            });
+        });
+        $('form').on('submit', function (e) {
+            e.preventDefault();
+            var frm = $(this).serialize();
+            console.log(frm);
+            var idusuario = $("#idusuario").val();
+            var nome = $("#nome").val();
+            var option = $("#option").val();
+            $.ajax({
+                method: "POST",
+                url: "/manageusers",
+                data: {'idusuario': idusuario,
+                    'nome': nome,
+                    'option': option
+                },
+                success: function (output) {
+//                    alert(output);
+                    console.log(nome.length);
+                    $("#cuadro1").slideDown("slow");
+                    $("#cuadro2").slideUp("slow");
+                    doRefresh();
+                }
+
+            }).done(function (info) {
+                console.log(info);
+                var jsoninfo = JSON.parse(info);
+                console.log(jsoninfo);
+                mostra_message(jsoninfo);
+                limpaDados();
+            });
+        });
+        $("#frmCadastro #btn_listar").on("click", function () {
+//        listar();
+            $("#cuadro2").slideUp("slow");
+            $("#cuadro1").slideDown("slow");
+            table.ajax.reload();
+        });
+        function doRefresh() {
+            table.ajax.reload();
+        }
+        $("#b1").click(function () {
+            $.ajax({
+                type: "post",
+                url: "/buscaTexto",
+                data: {
+                    id: "27"
+                },
+                success: function (data) {
+                    $("#ag").html(data);
+                },
+                error: function () {
+                    $("#ag").html(data);
+                    alert('Deu zica');
+                }
+            });
+        });
+    }
+    );
+
+</script>
+{% endblock %}

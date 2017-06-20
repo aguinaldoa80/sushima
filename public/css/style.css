@@ -1,0 +1,335 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22/04/2017, 09:50:05
+    Author     : master
+*/
+/*-----start-header----*/
+.header-banner{
+	background:url('../images/banner.jpg') no-repeat;
+	background-size:cover;
+	min-height:900px;
+}
+.about-header-banner{
+	background:url('../images/banner.jpg') no-repeat;
+	background-size:cover;
+	min-height:230px;
+}
+.home{
+	float:left;
+	width:8%;
+	background: #d58afc;
+	padding: 2.5em 2em;
+}
+.top-menu{
+	float:left;
+	margin-top:9px;
+}
+
+nav a {
+	position: relative;
+	display: inline-block;
+	margin: 15px 25px;
+	outline: none;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 400;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+	font-size: 1.35em;
+}
+
+nav a:hover,
+nav a:focus {
+	outline: none;
+}/* Effect 13: three circles */
+.cl-effect-13 a {
+	-webkit-transition: color 0.3s;
+	-moz-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.cl-effect-13 a::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	color: transparent;
+	content: '.';
+	text-shadow: 0 0 transparent;
+	font-size: 1.2em;
+	-webkit-transition: text-shadow 0.3s, color 0.3s;
+	-moz-transition: text-shadow 0.3s, color 0.3s;
+	transition: text-shadow 0.3s, color 0.3s;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	transform: translateX(-50%);
+	pointer-events: none;
+}
+
+.cl-effect-13 a:hover::before,
+.cl-effect-13 a:focus::before {
+	color: #d58afc;
+	text-shadow: 10px 0 #fff, -10px 0 #fff;
+}
+
+.cl-effect-13 a:hover,
+.cl-effect-13 a:focus {
+	color: #ba7700;
+}
+
+/* Effect 14: border switch */
+.cl-effect-14 a {
+	padding: 0 20px;
+	height: 45px;
+	line-height: 45px;
+}
+.social-icons{
+    float:right;
+}
+.social-icons i{
+    width:35px;
+    height:35px;
+    background: url('../images/img-sprite.png') no-repeat 0px 0px;
+    display:inline-block;
+    cursor:pointer;
+}
+.social-icons i:hover {
+    opacity: 0.5;
+}
+i.facebook{
+    background-position:0px 0px;
+}
+i.twitter{
+    background-position:-40px 0px;
+}
+i.googlepluse{
+    background-position:-80px 0px;
+}
+@media screen and (max-width: 480px) {
+    .top-menu ul li a {
+        font-size: 13px;
+        margin: 0 7px;
+    }
+    .home {
+        width: 9.5%;
+        padding: 0.83em 0.7em;
+    }
+    .header-top {
+        padding: 0.35em 8px;
+        width: 89.5%;
+    }
+    .social-icons i {
+        width: 30px;
+        height: 30px;
+        background-size: 250px;
+    }
+    i.twitter {
+        background-position: -33px 0px;
+    }
+    i.googlepluse {
+        background-position: -68px 0px;
+    }
+    .top-menu {
+        margin-top: 5px;
+    }
+    .banner-info h1 a {
+        font-size: 1.35em;
+    }
+    .banner-info h2 {
+        font-size: 1.1em;
+        margin: 0.6em 0 0 0;
+    }
+    .header-bottom-grids {
+        margin-top: 3em;
+    }
+    .header-bottom-grid1 h4, .header-bottom-grid2 h4, .header-bottom-grid3 h4, .header-bottom-grid4 h4 {
+        font-size: 0.95em;
+        margin-top: 0.5em;
+    }
+    .header-bottom-grid1, .header-bottom-grid2, .header-bottom-grid3, .header-bottom-grid4 {
+        padding: 1em 0px 1.5em 0;
+    }
+    .header-banner {
+        min-height: 313px;
+    }
+    .secvice-top-grid-1, .secvice-top-grid-2, .secvice-top-grid-3, .secvice-top-grid-4 {
+        padding: 0.6em 0.1em 3em 0.1em;
+    }
+    .secvice-top-grid-1 h3, .secvice-top-grid-2 h3, .secvice-top-grid-3 h3, .secvice-top-grid-4 h3 {
+        font-size: 0.95em;
+        margin-bottom: 4px;
+    }
+    .secvice-top-grid-1 p, .secvice-top-grid-2 p, .secvice-top-grid-3 p, .secvice-top-grid-4 p {
+        font-size: 0.875em;
+        height: 61px;
+    }
+    i.icon1 {
+        width: 40px;
+        height: 40px;
+        background: url('../images/img-sprite.png') no-repeat -102px -2px;
+        background-size: 235px;
+    }
+    i.icon2 {
+        width: 40px;
+        height: 40px;
+        background-image: url(images/img-sprite.png) no-repeat -150px -2px;
+        background-size: 235px;
+    }
+    i.icon3 {
+        width: 40px;
+        height: 40px;
+        background: url('../images/img-sprite.png') no-repeat -196px -2px;
+        background-size: 235px;
+    }
+    i.icon4 {
+        width: 40px;
+        height: 40px;
+        background: url('../images/img-sprite.png') no-repeat -7px -39px;
+        background-size: 235px;
+    }
+    .services-bottom-left {
+        padding: 0 5px 0 0;
+    }
+    .services-bottom-right {
+        padding: 0 0 0 5px;
+    }
+    .services-bottom-middle h3 {
+        font-size: 1.1em;
+        height: 32px;
+    }
+    .services-bottom-middle p {
+        font-size: 0.95em;
+        margin-top: 5px;
+        height: 35px;
+    }
+    .services-bottom-grids {
+        padding: 1.5em 0 2em 0;
+    }
+    .item-1 h3, .item-2 h3 {
+        font-size: 1em;
+        padding: 8px 0;
+    }
+    .item-3 h4 {
+        font-size: 1.2em;
+        height: 36px;
+        overflow: hidden;
+    }
+    .item-3 {
+        min-height: 130px;
+        padding: 1.05em 0.4em 10px 0.4em;
+    }
+    .item-3 p {
+        font-size: 0.95em;
+        margin-top: 0.6em;
+        height: 62px;
+    }
+    .items {
+        padding: 1.6em 0;
+    }
+    .contact-section h3 {
+        font-size: 1.7em;
+    }
+    .contact-info {
+        width: 80%;
+    }
+    .contact-section input.text, .contact-section textarea {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    .contact-section input[type="button"] {
+        padding: 8px 0;
+        font-size: 16px;
+    }
+    .contact-section textarea {
+        height: 7em;
+    }
+    .contact-section {
+        padding: 2em 0 2em 0;
+    }
+    .banner-info1 h1 a {
+        font-size: 1.2em;
+    }
+    .banner-info1{
+        margin-top: 5px;
+    }
+    .about-header-banner {
+        min-height: 104px;
+    }
+    .section.group h2 {
+        font-size: 1.6em;
+        margin: 4px 0 12px 0px;
+    }
+    .about_img img {
+        margin-bottom: 0;
+    }
+    .about_desc h3 {
+        font-size: 1.3em;
+    }
+    .button a {
+        padding: 8px 23px;
+        border-width: 2px;
+        font-size: 0.95em;
+    }
+    .pack-desc h3 {
+        font-size: 1.2em;
+    }
+    .about_desc p {
+        line-height: 1.7em;
+        height: 50px;
+        overflow: hidden;
+    }
+    .span_1_of_3 {
+        width: 70%;
+        margin-top: 1em;
+    }
+    .spa_products h2 {
+        font-size: 1.5em;
+    }
+    .section.group {
+        padding: 1em 0 1em 0;
+    }
+    .read_more a {
+        padding: 5px 14px;
+    }
+    .products_1_of_3 h3 {
+        font-size: 1.01em;
+        margin: 7px 0 5px 0;
+    }
+    .products_1_of_3 p {
+        height: 69px;
+        line-height: 1.6em;
+    }
+    .gallery-head h3 {
+        font-size: 1.8em;
+    }
+    .page-not-found h4 {
+        font-size: 3.5em;
+    }
+    .page-not-found h3 {
+        font-size: 8em;
+    }
+    .company_address {
+        width: 33%;
+    }
+    .company_address p {
+        font-size: 0.82em;
+        padding: 5px 0;
+    }
+    .contact_info {
+        width: 65%;
+        margin-left: 1%;
+    }
+    .contact_desc h2 {
+        font-size: 1.4em;
+    }
+    .myButton {
+        padding: 7px 22px;
+    }
+    .contact-form span label {
+        font-size: 0.875em;
+    }
+}
