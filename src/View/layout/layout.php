@@ -21,6 +21,7 @@
         <script src="/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="/js/bootstrap-select.min.js" type="text/javascript"></script>
         <link href="/css/estilo.css" rel="stylesheet" type="text/css"/>
+        
         <!--<script src="/js/dataTables.editor.min.js" type="text/javascript"></script>-->
         <!--<script src="/js/dataTables.buttons.min.js" type="text/javascript"></script>-->
         <!--<script src="/js/jquery-3.2.1.min.js" type="text/javascript"></script>-->
@@ -60,7 +61,7 @@
                             <li class="dropdown">    
                                 <a href="#" class="notification dropdown-toggle fa fa-user-circle-o fa-lg" data-toggle="dropdown" role="button"
                                    aria-expanded="false">
-                                    <span class="aguinaldo">{{ AuthUser().username }}</span>
+                                    <span class="aguinaldo">{{ AuthUser().username|capitalize }}</span>
                                     <span class=" fa fa-caret-down fa-lg"></span>
                                 </a>
                                 <ul class="dropdown-menu " role="menu">
