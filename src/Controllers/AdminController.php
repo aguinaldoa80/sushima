@@ -2,6 +2,7 @@
 
 namespace MeuProjeto\Controllers;
 
+use MeuProjeto\Models\UserModel;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\RequestContext;
@@ -22,11 +23,19 @@ class AdminController {
     }
 
     public function dashboard() {
-        if ($this->sessao->get("usuario") == "") {
+        if (!UserModel::getUser()) {
             $re = new RedirectResponse('/login');
             $re->send();
         } else {
-            return $this->response->setContent($this->twig->render('dashboard.html',array('user' => $this->sessao->get("usuario"))));
+            return $this->response->setContent($this->twig->render('dashboard.html'));
+        }
+    }
+    public function manageCotacoes() {
+        if (!UserModel::getUser()) {
+            $re = new RedirectResponse('/login');
+            $re->send();
+        } else {
+            return $this->response->setContent($this->twig->render('cotacoes.html'));
         }
     }
 

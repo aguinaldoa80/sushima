@@ -1,0 +1,70 @@
+{% extends('layout/layout.php')%}
+{% block scripthead %}
+<!--scripts from head here-->
+{% endblock %}
+{% block panel %}
+
+<div class="container">
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-heading text-center fa-lg" style="font-family: Arial;"><strong>Área do administrador</strong></div>
+            <div class="panel-body">
+                <form id="frmCotacoes" class="form-horizontal" role="form">
+
+                    <div class="col-md-6" style="padding-left: 0px; padding-bottom: 5px;">
+                        <button type="button"  name="btnNovo" id="btnNovo" class="fa-lg btn btn-success" data-toggle="modal" data-target="#modalCotacao"><i class="fa fa-plus"></i> Novo</button>
+                    </div>
+                    <div class="input-group add-on col-md-6">
+                        <input class="form-control fa-lg" placeholder="Pesquisa" name="srch-term" id="srch-term" type="text">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+
+
+                </form>        
+
+                <table id="table" class="table table-responsive table-sm table-striped table-condensed table-bordered table-hover" cellspacing="0" width="100%">
+                    <thead>
+                        <tr style="background-color: #CCCCCC">
+                            <th class="text-center">Cod.</th>
+                            <th class="text-center">Data</th>
+                            <th class="text-center">Status</th>
+                            <th class="text-center">Encerra</th>
+                            <th class="text-center">Ações</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>Oi</td>
+                        <td>Oi</td>
+                        <td>Oi</td>
+                        <td>Oi</td>
+                        <td>Oi</td>
+                    </tr>
+                    <tr>
+                        <td>Oi</td>
+                        <td>Oi</td>
+                        <td>Oi</td>
+                        <td>Oi</td>
+                        <td>Oi</td>
+                    </tr>
+                    <tr>
+                        <td>Oi</td>
+                        <td>Oi</td>
+                        <td>Oi</td>
+                        <td>Oi</td>
+                        <td>Oi</td>
+                    </tr>
+                </table>
+
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+{% block scripts%}
+<!--scripts after body here-->
+{% endblock %}

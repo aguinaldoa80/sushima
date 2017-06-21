@@ -49,5 +49,8 @@ $rotas->add('manageusers', new Route('/manageusers', array(
 $rotas->add('dashboard', new Route('/dashboard', array(
     '_controller' => 'MeuProjeto\Controllers\AdminController',
     '_method' => 'dashboard')));
+$rotas->add('cotacoes', new Route('/cotacoes', array(
+    '_controller' => 'MeuProjeto\Controllers\AdminController',
+    '_method' => 'manageCotacoes')));
 
 return $rotas;

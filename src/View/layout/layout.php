@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>MeuProjeto</title>
+        <title>CotaTudo</title>
 
         <!-- Styles -->
         <link href="/css/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -87,7 +87,7 @@
                         <!-- Left Side Of Navbar -->
                         <ul class="nav navbar-nav">
                             {% if AuthUser() %}
-                            <li><a href="#" class="fa-lg" role="button" aria-expanded="false"><i class="fa fa-shopping-basket fa-lg"></i> Cotações</a></li>
+                            <li><a href="/cotacoes" class="fa-lg" role="button" aria-expanded="false"><i class="fa fa-shopping-basket fa-lg"></i> Cotações</a></li>
                             <li><a href="#" class="aguinaldo fa-lg" role="button" aria-expanded="false"><i class="fa fa-group fa-lg"></i> Fornecedores</a></li>
                             <li><a href="#" class="fa-lg aguinaldo" role="button" aria-expanded="false"><i class="fa fa-pie-chart"></i> Relatórios</a></li>
                             {% endif %}

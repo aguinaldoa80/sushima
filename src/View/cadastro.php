@@ -13,7 +13,7 @@
                         <div id = "verifynome" class="form-group">
                             <label for="name" class="col-md-4 control-label">Nome/Razão Social</label><i  id="load2" style='color: green' class='fa' aria-hidden='true'></i>
                             <div class="col-md-7">
-                                <input id="nome" type="text" class="form-control" name="nome" maxlength="50" autofocus>
+                                <input id="nome" type="text" class="form-control" name="nome" maxlength="50"  autofocus>
                                 <div id='load'></div>
                                 <span class="help-block">
                                     <strong id="erronome"></strong>
@@ -108,7 +108,7 @@
                         <div id = "verifycep" class="form-group">
                             <label for="cep" class="col-md-4 control-label">Cep</label><i  id="loadCep" style='color: green' class='fa' aria-hidden='true'></i>
                             <div class="col-md-7">
-                                <input id="cep" type="text" class="form-control" name="cep" maxlength="20" autofocus>
+                                <input id="cep" type="text" class="form-control" placeholder="00.000-000" name="cep" maxlength="20" autofocus>
                                 <div id='loadCepDiv'></div>
                                 <span class="help-block">
                                     <strong id="errocep"></strong>
@@ -118,7 +118,7 @@
                         <div id = "verifytelefone" class="form-group">
                             <label for="telefone" class="col-md-4 control-label">Telefone</label><i  id="loadTelefone" style='color: green' class='fa' aria-hidden='true'></i>
                             <div class="col-md-7">
-                                <input id="telefone" type="text" class="form-control" name="telefone" maxlength="30" autofocus>
+                                <input id="telefone" type="text" class="form-control" name="telefone" placeholder="(0XX) 9 1234-1234"maxlength="30" autofocus>
                                 <div id='loadTelefoneDiv'></div>
                                 <span class="help-block">
                                     <strong id="errotelefone"></strong>

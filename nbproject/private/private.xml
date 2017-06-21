@@ -3,12 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/master/var/www/html/MeuProjeto/src/View/cotacoes.html</file>
             <file>file:/home/master/var/www/html/MeuProjeto/src/View/dashboard.html</file>
-            <file>file:/home/master/var/www/html/MeuProjeto/src/View/login.php</file>
             <file>file:/home/master/var/www/html/MeuProjeto/src/Controllers/AdminController.php</file>
             <file>file:/home/master/var/www/html/MeuProjeto/src/View/cadastro.php</file>
             <file>file:/home/master/var/www/html/MeuProjeto/src/View/layout/layout.php</file>
-            <file>file:/home/master/var/www/html/MeuProjeto/public/css/estilo.css</file>
+            <file>file:/home/master/var/www/html/MeuProjeto/src/Models/UserModel.php</file>
+            <file>file:/home/master/var/www/html/MeuProjeto/src/View/welcome.php</file>
         </group>
     </open-files>
 </project-private>
