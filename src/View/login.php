@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-primary">
-                <div class="panel-heading text-center fa-lg"><strong>Login</strong></div>
+                <div class="panel-heading text-center fa-lg" style="font-family: sans-serif;"><strong>Login</strong></div>
                 <div class="panel-body">
                     <form id="formLogin" class="form-horizontal" role="form">
                         <div id="errologin" class="">

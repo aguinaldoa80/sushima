@@ -13,9 +13,25 @@ body {
     font-weight: normal;
     font-style: normal;
 }
+.navbar-default .navbar-nav>li>a{
+    color: white;
+}
+.navbar-default .navbar-brand{
+    color: white;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li:hover{
+    background-color: #d4d4d4
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{
+    color: window;
+}
+.modal {
+  padding-top: 60px!important;
+}
 .navbar-default {
-    background-color: #f7ecb5;
-    border-color: #d3e0e9
+    background-color: green;
+    color: white;
+    border-color: green;
 }
 .panel-heading
 {

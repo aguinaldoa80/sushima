@@ -13,7 +13,7 @@
         <link href="/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
         <link href="/css/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-        
+        <link href="/css/datepicker.css" rel="stylesheet" type="text/css"/>
         <script src="/js/jquery-1.12.4.js" type="text/javascript"></script>
         <script src="/js/jquery.dataTables.min.js" type="text/javascript"></script>
         <!--<script src="/js/jquery.dataTables.js" type="text/javascript"></script>-->

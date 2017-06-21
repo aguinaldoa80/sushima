@@ -1,6 +1,7 @@
 {% extends('layout/layout.php')%}
 {% block scripthead %}
 <!--scripts from head here-->
+<link href="/css/datepicker.css" rel="stylesheet" type="text/css"/>
 {% endblock %}
 {% block panel %}
 
@@ -9,11 +10,73 @@
         <div class="panel panel-primary">
             <div class="panel-heading text-center fa-lg" style="font-family: Arial;"><strong>Cotações</strong></div>
             <div class="panel-body">
+                <div class="fa-lg">
+                    <div  style="display: none;"  id="adicionarCotacao" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  aria-hidden="true">
+                        <div class="modal-dialog" >
+                            <div class="modal-content ">
+                                <div class="modal-header text-center label-success">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">Nova Cotação</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="formNovaCotacao" class="form-horizontal" role="form">
+                                        <div class="form-group">
+                                            <div id="verirydataabertura" class="col-md-6">
+                                                <label for="dataabertura" class="control-label">Data de abertura</label>
+                                                <input id="dataabertura" type="text" name="dataabertura" class="form-control datepicker" placeholder="dd/mm/AAAA" maxlength="10" required autofocus>
+                                                <span class="help-block">
+                                                    <strong id="errodataabertura"></strong>
+                                                </span>
+                                            </div>
+                                            <div id="verifyhoraabertura" class="col-md-6">
+                                                <label for="horaabertura" class="control-label">Hora da abertura</label>
+                                                <input id="horaabertura" type="text" class="form-control" name="horaabertura"
+                                                       value="" autofocus>
+                                                <span class="help-block">
+                                                    <strong id="errohoraabertura"></strong>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-info">
+                                            <div class="panel-heading text-center " style="font-family: sans-serif;"><strong>Encerramento automático, opcional</strong></div>
+                                            <div class="panel-body">
+                                                <div class="form-group">
+                                                    <div id="verifydataencerramento" class="col-md-6">
+                                                        <label for="dataencerramento" class="control-label">Data de encerramento</label>
+                                                        <input id="dataencerramento" type="text" class="form-control" name="dataencerramento"
+                                                               value="" autofocus>
+                                                        <span class="help-block">
+                                                            <strong></strong>
+                                                        </span>
+                                                    </div>
+                                                    <div id="verifyhoraencerramento" class="col-md-6">
+                                                        <label for="horaencerramento" class="control-label">Hora do encerramento</label>
+                                                        <input id="horaencerramento" type="text" class="form-control" name="horaencerramento"
+                                                               value="" autofocus>
+                                                        <span class="help-block">
+                                                            <strong id="errohoraencerramento"></strong>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <div class="modal-footer label-success">
+                                    <button id="btnSalvarCotacao" type="button" class="btn btn-primary" style="font-size: 1.0em; width: 100pt"><i class="fa fa-save"></i> Salvar</button>
+                                    <button id="btnCancelarCotacao" type="button" class="btn btn-default" style="font-size: 1.0em; width: 100pt" data-dismiss="modal"><i class="fa fa-window-close"></i> Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <form id = "formCadastro">
 
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="/cotacoes/managecotacoes" name="btnCadastrar" id="btnCadastrar" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Novo</a>
+                            <!--<a href="/cotacoes/managecotacoes" name="btnCadastrar" id="btnCadastrar" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Novo</a>-->
+                            <button type="button" name="btnCadastrar" id="btnCadastrar" data-toggle="modal" data-target="#adicionarCotacao" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Novo</button>
                         </div>
                         <div class="col-md-6">
                             <input id="nome" type="text" class="form-control" name="nome" maxlength="50"  placeholder="Pesquisa" autofocus>
@@ -64,4 +127,13 @@
 {% endblock %}
 {% block scripts%}
 <!--scripts after body here-->
+<script src="/js/jquery.mask.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap-datepicker.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#dataabertura').datepicker({
+            format: "dd/mm/yyyy",
+        }).mask('00/00/0000', {clearIfNotMatch: true});
+    });
+</script>
 {% endblock %}

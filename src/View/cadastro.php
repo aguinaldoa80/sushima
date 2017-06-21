@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-primary">
-                <div class="panel-heading text-center fa-lg"><strong>Cadastro</strong></div>
+                <div class="panel-heading text-center fa-lg" style="font-family: sans-serif;"><strong>Cadastro</strong></div>
                 <div class="panel-body">
                    
                     <form id = "formCadastro" class="form-horizontal" role="form">
