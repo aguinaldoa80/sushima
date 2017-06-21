@@ -13,7 +13,7 @@
                         <div id = "verifynome" class="form-group">
                             <label for="name" class="col-md-4 control-label">Nome/Razão Social</label><i  id="load2" style='color: green' class='fa' aria-hidden='true'></i>
                             <div class="col-md-7">
-                                <input id="nome" type="text" class="form-control" name="nome" maxlength="50"  autofocus>
+                                <input id="nome" type="text" class="form-control" name="nome" maxlength="100"  autofocus>
                                 <div id='load'></div>
                                 <span class="help-block">
                                     <strong id="erronome"></strong>
@@ -143,7 +143,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="button"  name="btnCadastrar" id="btnCadastrar" class="btn btn-success fa-lg">Cadastrar</button>
-                                <a id="btnCancelar" href="/" class="btn btn-danger fa-lg" value="Cancelar">Cancelar</a>
+                                <a id="btnCancelar" href="/" class="btn btn-danger fa-lg">Cancelar</a>
                             </div>
                         </div>
 

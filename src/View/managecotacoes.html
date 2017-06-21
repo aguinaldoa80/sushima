@@ -1,0 +1,98 @@
+{% extends('layout/layout.php')%}
+{% block scripthead %}
+<!--scripts from head here-->
+{% endblock %}
+{% block panel %}
+
+<div class="container">
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-heading text-center fa-lg" style="font-family: Arial;"><strong>Cotações</strong></div>
+            <div class="panel-body">
+                <form id = "formCadastro">
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="name" class="control-label">Produto/Descrição</label>
+                            <input id="nome" type="text" class="form-control" name="nome" maxlength="50"  autofocus>
+                            <div id='load'></div>
+                            <span class="help-block">
+                                <strong id="erronome"></strong>
+                            </span>
+                        </div>
+
+
+                        <div class="col-md-2">
+                            <label for="name" class="control-label">Marca/Modelo</label>
+                            <input id="nome" type="text" class="form-control" name="nome" maxlength="50"  autofocus>
+                            <div id='load'></div>
+                            <span class="help-block">
+                                <strong id="erronome"></strong>
+                            </span>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="name" class="control-label">Quantidade</label>
+                            <input id="nome" type="text" class="form-control" name="nome" maxlength="50"  autofocus>
+                            <div id='load'></div>
+                            <span class="help-block">
+                                <strong id="erronome"></strong>
+                            </span>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="row" style="padding-left: 15px;"> <label for="name" class="control-label">Inserção manual</label></div>
+                            <button type="button"  name="btnCadastrar" id="btnCadastrar" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Adicionar</button>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="row" style="padding-left: 15px"><label for="name" class="control-label">Importar xls, csv, txt</label></div>
+
+                            <button type="button"  name="btnCadastrar" id="btnCadastrar" class="btn btn-info fa-lg "><span class="fa fa-file"></span></button>
+                            <button type="button"  name="btnCadastrar" id="btnCadastrar" class="btn btn-default fa-lg "><span class="fa fa-file-excel-o"></span></button>
+                            <button type="button"  name="btnCadastrar" id="btnCadastrar" class="btn btn-warning fa-lg "><span class="fa fa-file-pdf-o"></span></button>                            
+
+                        </div>
+
+                    </div>
+                </form>
+                <div class="table-responsive">
+                    <table id="table" class="table  table-sm table-striped table-condensed table-bordered table-hover" cellspacing="0" width="100%">
+                        <thead>
+                            <tr style="background-color: #CCCCCC">
+                                <th class="text-center">Produto/Descrição</th>
+                                <th class="text-center">Marca/Modelo</th>
+                                <th class="text-center">Qtde</th>
+                                <th class="text-center">Ações</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                        </tr>
+                        <tr>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                        </tr>
+                        <tr>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                        </tr>
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+{% block scripts%}
+<!--scripts after body here-->
+{% endblock %}

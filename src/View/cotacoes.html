@@ -9,54 +9,51 @@
         <div class="panel panel-primary">
             <div class="panel-heading text-center fa-lg" style="font-family: Arial;"><strong>Cotações</strong></div>
             <div class="panel-body">
-                <form id="frmCotacoes" class="form-horizontal" role="form">
+                <form id = "formCadastro">
 
-                    <div class="col-md-6" style="padding-left: 0px; padding-bottom: 5px;">
-                        <button type="button"  name="btnNovo" id="btnNovo" class="fa-lg btn btn-success" data-toggle="modal" data-target="#modalCotacao"><i class="fa fa-plus"></i> Novo</button>
-                    </div>
-                    <div class="input-group add-on col-md-6">
-                        <input class="form-control fa-lg" placeholder="Pesquisa" name="srch-term" id="srch-term" type="text">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="/cotacoes/managecotacoes" name="btnCadastrar" id="btnCadastrar" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Novo</a>
+                        </div>
+                        <div class="col-md-6">
+                            <input id="nome" type="text" class="form-control" name="nome" maxlength="50"  placeholder="Pesquisa" autofocus>
                         </div>
                     </div>
-
-
-                </form>        
-
-                <table id="table" class="table table-responsive table-sm table-striped table-condensed table-bordered table-hover" cellspacing="0" width="100%">
-                    <thead>
-                        <tr style="background-color: #CCCCCC">
-                            <th class="text-center">Cod.</th>
-                            <th class="text-center">Data</th>
-                            <th class="text-center">Status</th>
-                            <th class="text-center">Encerra</th>
-                            <th class="text-center">Ações</th>
+                </form>  
+                <div class="table-responsive">
+                    <table id="table" class="table table-sm table-striped table-condensed table-bordered table-hover" cellspacing="0" width="100%">
+                        <thead>
+                            <tr style="background-color: #CCCCCC">
+                                <th class="text-center">Cod.</th>
+                                <th class="text-center">Data</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">Encerra</th>
+                                <th class="text-center">Ações</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                            <td>Oi</td>
                         </tr>
-                    </thead>
-                    <tr>
-                        <td>Oi</td>
-                        <td>Oi</td>
-                        <td>Oi</td>
-                        <td>Oi</td>
-                        <td>Oi</td>
-                    </tr>
-                    <tr>
-                        <td>Oi</td>
-                        <td>Oi</td>
-                        <td>Oi</td>
-                        <td>Oi</td>
-                        <td>Oi</td>
-                    </tr>
-                    <tr>
-                        <td>Oi</td>
-                        <td>Oi</td>
-                        <td>Oi</td>
-                        <td>Oi</td>
-                        <td>Oi</td>
-                    </tr>
-                </table>
-
+                        <tr>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                        </tr>
+                        <tr>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                            <td>Oi</td>
+                        </tr>
+                    </table>
+                </div>
 
             </div>
 

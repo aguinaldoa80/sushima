@@ -51,6 +51,9 @@ $rotas->add('dashboard', new Route('/dashboard', array(
     '_method' => 'dashboard')));
 $rotas->add('cotacoes', new Route('/cotacoes', array(
     '_controller' => 'MeuProjeto\Controllers\AdminController',
+    '_method' => 'cotacoes')));
+$rotas->add('managecotacoes', new Route('/cotacoes/managecotacoes', array(
+    '_controller' => 'MeuProjeto\Controllers\AdminController',
     '_method' => 'manageCotacoes')));
 
 return $rotas;

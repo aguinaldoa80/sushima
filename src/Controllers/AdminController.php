@@ -30,12 +30,20 @@ class AdminController {
             return $this->response->setContent($this->twig->render('dashboard.html'));
         }
     }
-    public function manageCotacoes() {
+    public function cotacoes() {
         if (!UserModel::getUser()) {
             $re = new RedirectResponse('/login');
             $re->send();
         } else {
             return $this->response->setContent($this->twig->render('cotacoes.html'));
+        }
+    }
+    public function manageCotacoes() {
+        if (!UserModel::getUser()) {
+            $re = new RedirectResponse('/login');
+            $re->send();
+        } else {
+            return $this->response->setContent($this->twig->render('managecotacoes.html'));
         }
     }
 
