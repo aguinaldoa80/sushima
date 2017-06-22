@@ -21,10 +21,10 @@
         <script src="/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="/js/bootstrap-select.min.js" type="text/javascript"></script>
         <link href="/css/estilo.css" rel="stylesheet" type="text/css"/>
-        
-        <!--<script src="/js/dataTables.editor.min.js" type="text/javascript"></script>-->
-        <!--<script src="/js/dataTables.buttons.min.js" type="text/javascript"></script>-->
-        <!--<script src="/js/jquery-3.2.1.min.js" type="text/javascript"></script>-->
+
+<!--<script src="/js/dataTables.editor.min.js" type="text/javascript"></script>-->
+<!--<script src="/js/dataTables.buttons.min.js" type="text/javascript"></script>-->
+<!--<script src="/js/jquery-3.2.1.min.js" type="text/javascript"></script>-->
         {% endblock %}
         {% block scripthead %}
         {% endblock %}
@@ -56,7 +56,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <!-- Authentication Links -->
                             {% if AuthUser() %}
-                            
+
                             <li class="dropdown" ><a data-toggle="dropdown" role="button" class="fa-lg" aria-hidden="false"><span id="notificao" class="fa fa-bell-o"><label id="qtdeNotificacao" class="bellAguinaldo" style="font-size: 0.8em">2</label></span></a></li>
                             <li class="dropdown">    
                                 <a href="#" class="notification dropdown-toggle fa fa-user-circle-o fa-lg" data-toggle="dropdown" role="button"
@@ -68,7 +68,7 @@
                                     <li>
                                         <a href="/logout"
                                            onclick="event.preventDefault();
-    document.getElementById('logout-form').submit();" class="fa-lg">
+                                                   document.getElementById('logout-form').submit();" class="fa-lg">
                                             Sair <span class="fa fa-sign-out"/>
                                         </a>
                                         <form id="logout-form" action="/logout" method="POST"

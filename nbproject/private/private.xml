@@ -5,8 +5,7 @@
         <group>
             <file>file:/home/master/var/www/html/MeuProjeto/src/View/cotacoes.html</file>
             <file>file:/home/master/var/www/html/MeuProjeto/src/Controllers/AdminController.php</file>
-            <file>file:/home/master/var/www/html/MeuProjeto/public/css/estilo.css</file>
-            <file>file:/home/master/var/www/html/MeuProjeto/src/View/welcome.php</file>
+            <file>file:/home/master/var/www/html/MeuProjeto/src/View/layout/layout.php</file>
         </group>
     </open-files>
 </project-private>

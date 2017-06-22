@@ -1,7 +1,9 @@
 {% extends('layout/layout.php')%}
 {% block scripthead %}
 <!--scripts from head here-->
-<link href="/css/datepicker.css" rel="stylesheet" type="text/css"/>
+<script>
+    
+</script>
 {% endblock %}
 {% block panel %}
 
@@ -23,14 +25,14 @@
                                         <div class="form-group">
                                             <div id="verirydataabertura" class="col-md-6">
                                                 <label for="dataabertura" class="control-label">Data de abertura</label>
-                                                <input id="dataabertura" type="text" name="dataabertura" class="form-control datepicker" placeholder="dd/mm/AAAA" maxlength="10" required autofocus>
+                                                <input id="dataabertura" type="date" name="dataabertura" class="form-control datepicker" placeholder="dd/mm/aaaa" maxlength="10" required autofocus>
                                                 <span class="help-block">
                                                     <strong id="errodataabertura"></strong>
                                                 </span>
                                             </div>
                                             <div id="verifyhoraabertura" class="col-md-6">
                                                 <label for="horaabertura" class="control-label">Hora da abertura</label>
-                                                <input id="horaabertura" type="text" class="form-control" name="horaabertura"
+                                                <input id="horaabertura" type="time" class="form-control" name="horaabertura"
                                                        value="" autofocus>
                                                 <span class="help-block">
                                                     <strong id="errohoraabertura"></strong>
@@ -69,17 +71,18 @@
                                 </div>
                             </div>
                         </div>
+                      
                     </div>
                 </div>
                 <form id = "formCadastro">
 
                     <div class="row">
                         <div class="col-md-6">
-                            <!--<a href="/cotacoes/managecotacoes" name="btnCadastrar" id="btnCadastrar" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Novo</a>-->
-                            <button type="button" name="btnCadastrar" id="btnCadastrar" data-toggle="modal" data-target="#adicionarCotacao" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Novo</button>
+                            <a href="/cotacoes/managecotacoes" name="btnCadastrar" id="btnCadastrar" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Nova cotação</a>
+                            <!--<button type="button" name="btnCadastrar" id="btnCadastrar" data-toggle="modal" data-target="#adicionarCotacao" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Nova cotação</button>-->
                         </div>
                         <div class="col-md-6">
-                            <input id="nome" type="text" class="form-control" name="nome" maxlength="50"  placeholder="Pesquisa" autofocus>
+                            <input id="pesquisa" type="text" class="form-control datepicker" name="pesquisa" maxlength="50"  placeholder="Pesquisa" autofocus>
                         </div>
                     </div>
                 </form>  
@@ -131,9 +134,27 @@
 <script src="/js/bootstrap-datepicker.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#dataabertura').datepicker({
+        $("#dataabertura").datepicker({
             format: "dd/mm/yyyy",
         }).mask('00/00/0000', {clearIfNotMatch: true});
+//        $("#horaabertura").mask("00:00",{ "placeholder": "hh/mm" });
+        var maskBehavior = function (val) {
+        val = val.split(":");
+        return (parseInt(val[0]) > 19)? "HZ:M0" : "H0:M0";
+    }
+
+    spOptions = {
+        onKeyPress: function(val, e, field, options) {
+            field.mask(maskBehavior.apply({}, arguments), options);
+        },
+        translation: {
+            'H': { pattern: /[0-2]/, optional: false },
+            'Z': { pattern: /[0-3]/, optional: false },
+            'M': { pattern: /[0-5]/, optional: false}
+        }
+    };
+
+    $('#horaabertura').mask(maskBehavior, spOptions);
     });
 </script>
 {% endblock %}
