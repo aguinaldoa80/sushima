@@ -6,25 +6,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>CotaTudo</title>
+        <title>SUSHIMA</title>
 
         <!-- Styles -->
         <link href="/css/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
         <link href="/css/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-        <link href="/css/datepicker.css" rel="stylesheet" type="text/css"/>
         <script src="/js/jquery-1.12.4.js" type="text/javascript"></script>
-        <script src="/js/jquery.dataTables.min.js" type="text/javascript"></script>
-        <!--<script src="/js/jquery.dataTables.js" type="text/javascript"></script>-->
-        <script src="/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
         <script src="/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="/js/bootstrap-select.min.js" type="text/javascript"></script>
         <link href="/css/estilo.css" rel="stylesheet" type="text/css"/>
-
-<!--<script src="/js/dataTables.editor.min.js" type="text/javascript"></script>-->
-<!--<script src="/js/dataTables.buttons.min.js" type="text/javascript"></script>-->
-<!--<script src="/js/jquery-3.2.1.min.js" type="text/javascript"></script>-->
         {% endblock %}
         {% block scripthead %}
         {% endblock %}
@@ -46,7 +35,7 @@
                         </button>
                         <!-- Branding Image -->
                         <a class="navbar-brand fa-lg aguinaldo" href="/">
-                            {{ 'CotaTudo' }}
+                            {{ 'SUSHIMA' }}
                         </a>
                     </div>
 
