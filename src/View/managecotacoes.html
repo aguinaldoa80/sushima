@@ -13,84 +13,93 @@
 
                     <form id="frmCadastro" class="form-inline">
                         <div class="form-group">
+                            <label class="sr-only" for="codbarra">Código de Barras</label>
+                            <input type="text" class="form-control" id="codbarra" placeholder="Código de barras"  name="codbarras" maxlength="13">
+                        </div>
+                        <div class="form-group">
                             <label class="sr-only" for="produto">Produto/Descrição</label>
                             <input type="text" class="form-control" id="produto" placeholder="Produto/Descrição"  name="produto">
                         </div>
+                        <!--<div class="form-group">-->
+                            <!--                            <label class="sr-only" for="tipo">Tipo</label>
+                                                        <button style="float:right;" type="button" id="btnSalvarCotacao" class="btn btn-default fa fa-lg"><i class="fa fa-plus"></i></button>
+                                                        <select id="tipo" name="tipo" style="width:auto;" class="form-control">
+                                                            <option class="">UNIDADE</option>
+                                                            <option class="">fardo</option>
+                                                            <option class="">PCT</option>
+                                                        </select>-->
+<!--                            <label class="sr-only" for="embalagem">Unid/Pct/Kg</label>
+                            <input type="text" class="form-control" id="embalagem" placeholder="Unid/Pct/Kg/Cx/Dz/Frd"  name="embalagem">
+                        </div>-->
+
                         <div class="form-group">
-                            <label class="sr-only" for="pwd">Password:</label>
-                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                            <label class="sr-only" for="qtde">Qtde</label>
+                            <input type="text" class="form-control" id="qtde" placeholder="Qtde"  name="qtde" maxlength="8">
                         </div>
-                        <div class="checkbox">
-                            <label><input type="checkbox" name="remember"> Remember me</label>
+                        <button type="button" id="btnSalvarCotacao" class="btn btn-primary fa-lg"><i class="fa fa-save"></i> Salvar</button>
+                        <button type="button" id="btnCancelar" class="btn btn-danger fa-lg"><i class="fa fa-window-close-o"></i> Cancelar</button>
+                        <div id="erroform" class="has-error">
+                            <span class="help-block has-error">
+                                <strong id="erroform"></strong>
+                            </span>
                         </div>
-                        <button type="button" class="btn btn-primary"> Salvar</button>
-                        <button type="button" class="btn btn-primary"> Cancelar</button>
                     </form>
                 </div>
             </div>
         </div>
-            <div id="quadro2">
-                <div class="panel panel-primary">
-                    <div class="panel-heading text-center fa-lg" style="font-family: Arial;"><strong>Gerenciar cotação</strong></div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <form id="frm" class="form-inline">
-                                <div class="col-md-2">
-                                    <div class="row" style="padding-left: 15px;"> <label for="btnCadastrar" class="control-label">Inserção manual</label></div>
-                                    <button type="button"  name="btnCadastrar" id="btnCadastrar" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Adicionar</button>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="row" style="padding-left: 15px"><label for="name" class="control-label">Importar xls, csv, txt</label></div>
+        <div id="quadro2">
+            <div class="panel panel-primary">
+                <div class="panel-heading text-center fa-lg" style="font-family: Arial;"><strong>Gerenciar cotação</strong></div>
+                <div class="panel-body">
+                    <div class="row">
+                        <form id="frm" class="form-inline">
+                            <div class="form-group" style="padding-left: 15px;">
+                                <button type="button"  name="btnCadastrar" id="btnCadastrar" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Adicionar item manual</button>
+                                <button type="button"  name="btnImportar" id="btnImportar" class="btn btn-primary fa-lg "><span class="fa fa-file"></span> Importar aquivo</button>
+                            </div>
+                        </form>
+                    </div>
 
-                                    <button type="button"  name="btnImportar" id="btnImportar" class="btn btn-primary fa-lg "><span class="fa fa-file"></span> Importar</button>
-                                    <!--<button type="button"  name="btnCadastrar" id="btnCadastrar" class="btn btn-info fa-lg "><span class="fa fa-file"></span></button>-->
-                                    <!--                            <button type="button"  name="btnCadastrar" id="btnCadastrar" class="btn btn-default fa-lg "><span class="fa fa-file-excel-o"></span></button>
-                                                                <button type="button"  name="btnCadastrar" id="btnCadastrar" class="btn btn-warning fa-lg "><span class="fa fa-file-pdf-o"></span></button>                            -->
-
-                                </div>
-                            </form>
-                        </div>
-
-                        <div class="table-responsive">
-                            <table id="table" class="table  table-sm table-striped table-condensed table-bordered table-hover" cellspacing="0" width="100%">
-                                <thead>
-                                    <tr style="background-color: #CCCCCC">
-                                        <th class="text-center">Produto/Descrição</th>
-                                        <th class="text-center">Marca/Modelo</th>
-                                        <th class="text-center">Qtde</th>
-                                        <th class="text-center">Ações</th>
-                                    </tr>
-                                </thead>
-                                <tr>
-                                    <td>Oi</td>
-                                    <td>Oi</td>
-                                    <td>Oi</td>
-                                    <td>Oi</td>
+                    <div class="table-responsive">
+                        <table id="table" class="table  table-sm table-striped table-condensed table-bordered table-hover" cellspacing="0" width="100%">
+                            <thead>
+                                <tr style="background-color: #CCCCCC">
+                                    <th class="text-center">Produto/Descrição</th>
+                                    <th class="text-center">Embalagem</th>
+                                    <th class="text-center">Qtde</th>
+                                    <th class="text-center">Ações</th>
                                 </tr>
-                                <tr>
-                                    <td>Oi</td>
-                                    <td>Oi</td>
-                                    <td>Oi</td>
-                                    <td>Oi</td>
-                                </tr>
-                                <tr>
-                                    <td>Oi</td>
-                                    <td>Oi</td>
-                                    <td>Oi</td>
-                                    <td>Oi</td>
-                                </tr>
+                            </thead>
+                            <tr>
+                                <td>Oi</td>
+                                <td>Oi</td>
+                                <td>Oi</td>
+                                <td>Oi</td>
+                            </tr>
+                            <tr>
+                                <td>Oi</td>
+                                <td>Oi</td>
+                                <td>Oi</td>
+                                <td>Oi</td>
+                            </tr>
+                            <tr>
+                                <td>Oi</td>
+                                <td>Oi</td>
+                                <td>Oi</td>
+                                <td>Oi</td>
+                            </tr>
 
-                            </table>
+                        </table>
 
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    {% endblock %}
-    {% block scripts%}
-    <!--scripts after body here-->
-    <script src="/js/jquery.mask.min.js" type="text/javascript"></script>
-    <script src="/js/managecotacoes.js" type="text/javascript"></script>
-    {% endblock %}
+</div>
+{% endblock %}
+{% block scripts%}
+<!--scripts after body here-->
+<script src="/js/jquery.mask.min.js" type="text/javascript"></script>
+<script src="/js/managecotacoes.js" type="text/javascript"></script>
+{% endblock %}

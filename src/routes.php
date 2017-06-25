@@ -29,8 +29,8 @@ $rotas->add('cadastro', new Route('/cadastro', array(
 $rotas->add('produto', new Route('/produto/{_param}', array('_controller' => 'MeuProjeto\Controllers\ControleProduto', '_method' => 'show')));
 
 $rotas->add('listagem', new Route('/produtos', array('_controller' =>
-    'MeuProjeto\Controllers\ControleProduto',
-    '_method' => 'listagem')));
+    'MeuProjeto\Controllers\ControleIndex',
+    '_method' => 'produtos')));
 $rotas->add('teste', new Route('/teste', array('_controller' =>
     'MeuProjeto\Controllers\ControleProduto',
     '_method' => 'teste')));
