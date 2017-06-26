@@ -22,14 +22,10 @@ $rotas->add('logout', new Route('/logout', array(
     '_controller' => 'MeuProjeto\Controllers\UserController',
     '_method' => 'logout')));
 
-$rotas->add('cadastro', new Route('/cadastro', array(
-    '_controller' => 'MeuProjeto\Controllers\UserController',
-    '_method' => 'cadastro')));
-
 $rotas->add('produto', new Route('/produto/{_param}', array('_controller' => 'MeuProjeto\Controllers\ControleProduto', '_method' => 'show')));
 
-$rotas->add('listagem', new Route('/produtos', array('_controller' =>
-    'MeuProjeto\Controllers\ControleIndex',
+$rotas->add('listagem', new Route('/admin/produtos', array('_controller' =>
+    'MeuProjeto\Controllers\ProdutoController',
     '_method' => 'produtos')));
 $rotas->add('teste', new Route('/teste', array('_controller' =>
     'MeuProjeto\Controllers\ControleProduto',
@@ -39,13 +35,12 @@ $rotas->add('usuarios', new Route('/usuarios', array(
     '_controller' => 'MeuProjeto\Controllers\ControleLista',
     '_method' => 'usuarios')));
 
-$rotas->add('buscaTexto', new Route('/buscaTexto', array(
-    '_controller' => 'MeuProjeto\Controllers\UserController',
-    '_method' => 'buscaTexto')));
-
 $rotas->add('manageusers', new Route('/manageusers', array(
     '_controller' => 'MeuProjeto\Controllers\UserController',
     '_method' => 'manageUsers')));
+$rotas->add('manageprodutos', new Route('/admin/manageProdutos', array(
+    '_controller' => 'MeuProjeto\Controllers\ProdutoController',
+    '_method' => 'manageProdutos')));
 $rotas->add('dashboard', new Route('/dashboard', array(
     '_controller' => 'MeuProjeto\Controllers\AdminController',
     '_method' => 'dashboard')));

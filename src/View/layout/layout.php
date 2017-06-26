@@ -11,7 +11,8 @@
         <!-- Styles -->
         <link href="/css/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="/css/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-        <script src="/js/jquery-1.12.4.js" type="text/javascript"></script>
+        <!--<script src="/js/jquery-1.12.4.js" type="text/javascript"></script>-->
+        <script src="/js/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="/js/bootstrap.min.js" type="text/javascript"></script>
         <link href="/css/estilo.css" rel="stylesheet" type="text/css"/>
         {% endblock %}

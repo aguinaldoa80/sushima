@@ -41,8 +41,5 @@ class ControleIndex {
 //        return $this->response->setContent($this->twig->render('welcome.php'));
     }
 
-    public function produtos() {
-        return $this->response->setContent($this->twig->render('produtos.php'));
-    }
 
 }
