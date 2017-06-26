@@ -1,63 +1,46 @@
-$('#preco').mask('0.000,00', {reverse: true});
-//        $("#marca").mask('A#',{placeholder: "__/__/____"});
-$("#produto").keyup(function () {
-    var valor = $("#produto").val().replace(/[^a-zA-Z 0-9 /-]+/g, '');
-    $("#produto").val(valor);
-});
-$("#descricao").keyup(function () {
-    var valor = $("#descricao").val().replace(/[^a-zA-Z 0-9 /-]+/g, '');
-    $("#descricao").val(valor);
+$(document).ready(function () {
+    refreshTable();
 });
 
-function readUrlFromImage(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
+function refreshTable() {
 
-        reader.onload = function (e) {
-            $('#imagemproduto')
-                    .attr('src', e.target.result)
-                    .width(200)
-                    .height(200);
-        };
 
-        reader.readAsDataURL(input.files[0]);
-    }
-    console.log($("#path").val());
-}
-
-$('#btnCadastrar').on('click touchstart', function (e) {
-    e.preventDefault();
-    var ident = $("#id").val();
-    var prod = $("#produto").val();
-    var desc = $("#descricao").val();
-    var valor = $("#preco").val();
-    var foto = $("#imagemproduto").attr("src");
     $.ajax({
         type: 'POST',
         url: '/admin/manageProdutos',
         data: {
-            option: 'saveProduto',
-            produto: prod,
-            descricao: desc,
-            preco: valor,
-            imagem: foto,
-            id: ident
+            option: "buscaProdutos",
         },
         success: function (data) {
-//           console.log(data);
+            var inf = JSON.parse(data);
+            if (inf) {
+                fillTable(inf);
+            }
+//            console.log(inf);
         }
     }).done(function (info) {
         if (info) {
             var jinfo = JSON.parse(info);
             showMessage(jinfo);
-            if (jinfo.goTo) {
-                window.location.assign(jinfo.goTo);
-            }
         }
     });
 
-});
-
+}
+function fillTable(row) {
+    for (var i in row) {
+        var status;
+        if(row[i].ativo == '1'){
+            status = "<i class='fa fa-2x fa-check' style='color: green;'></i>";
+        }else{
+            status = "<i class='fa fa-2x fa-close' style='color: red;'></i>";
+        }
+        $("#conteudo").append("<tr><td style='width: 90px'><img class='img img-resopnsive'"+
+         " style='height: 72px; width: 72px' src='"+row[i].imagem+"'</img></td><td style='vertical-align: middle;'>"+row[i].produto+
+         "</td><td style='vertical-align: middle;'>"+row[i].descricao+"</td><td style='vertical-align: middle;'>"+row[i].preco+"</td><td style='vertical-align: middle;' class='text-center'>"+status+"</td><td style='vertical-align: middle;'>"+
+         "<a id='btnEdit' class='btn btn-primary fa fa-pencil' href='/admin/produtos/"+row[i].id+"'>"+
+        "</a> <button id='btnRemove' class='btn btn-danger fa fa-trash'></button></td></tr>");
+    }
+}
 function showMessage(msg) {
 
     if (!msg.produto) {
@@ -107,7 +90,6 @@ function showMessage(msg) {
 
 }
 function limpaTexto() {
-    $("#id").val("");
     $("#produto").val("");
     $("#descricao").val("");
     $("#preco").val("");

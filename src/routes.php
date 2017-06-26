@@ -22,11 +22,16 @@ $rotas->add('logout', new Route('/logout', array(
     '_controller' => 'MeuProjeto\Controllers\UserController',
     '_method' => 'logout')));
 
-$rotas->add('produto', new Route('/produto/{_param}', array('_controller' => 'MeuProjeto\Controllers\ControleProduto', '_method' => 'show')));
+$rotas->add('produto', new Route('/admin/produtos/{_param}', array('_controller' => 
+    'MeuProjeto\Controllers\ProdutoController', '_method' => 'show')));
 
-$rotas->add('listagem', new Route('/admin/produtos', array('_controller' =>
+$rotas->add('produtos', new Route('/admin/produtos', array('_controller' =>
     'MeuProjeto\Controllers\ProdutoController',
     '_method' => 'produtos')));
+
+$rotas->add('cadastroprodutos', new Route('/admin/cadastro_produtos', array('_controller' =>
+    'MeuProjeto\Controllers\ProdutoController',
+    '_method' => 'cadastro_produtos')));
 $rotas->add('teste', new Route('/teste', array('_controller' =>
     'MeuProjeto\Controllers\ControleProduto',
     '_method' => 'teste')));

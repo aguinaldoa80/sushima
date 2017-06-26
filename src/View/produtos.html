@@ -78,7 +78,7 @@
 
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="/cotacoes/managecotacoes" name="btnCadastrar" id="btnCadastrar" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Nova cotação</a>
+                            <a href="/admin/cadastro_produtos" name="btnCadastrar" id="btnCadastrar" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Cadastrar produtos</a>
                             <!--<button type="button" name="btnCadastrar" id="btnCadastrar" data-toggle="modal" data-target="#adicionarCotacao" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Nova cotação</button>-->
                         </div>
                         <div class="col-md-6">
@@ -90,34 +90,17 @@
                     <table id="table" class="table table-sm table-striped table-condensed table-bordered table-hover" cellspacing="0" width="100%">
                         <thead>
                             <tr style="background-color: #CCCCCC">
-                                <th class="text-center">Cod.</th>
-                                <th class="text-center">Data</th>
+                                <th class="text-center">Imagem</th>
+                                <th class="text-center">Produto</th>
+                                <th class="text-center">Descrição</th>
+                                <th class="text-center">Preço</th>
                                 <th class="text-center">Status</th>
-                                <th class="text-center">Encerra</th>
                                 <th class="text-center">Ações</th>
                             </tr>
                         </thead>
-                        <tr>
-                            <td>Oi</td>
-                            <td>Oi</td>
-                            <td>Oi</td>
-                            <td>Oi</td>
-                            <td>Oi</td>
-                        </tr>
-                        <tr>
-                            <td>Oi</td>
-                            <td>Oi</td>
-                            <td>Oi</td>
-                            <td>Oi</td>
-                            <td>Oi</td>
-                        </tr>
-                        <tr>
-                            <td>Oi</td>
-                            <td>Oi</td>
-                            <td>Oi</td>
-                            <td>Oi</td>
-                            <td>Oi</td>
-                        </tr>
+                        <tbody id="conteudo">
+                            
+                        </tbody>
                     </table>
                 </div>
 
@@ -130,8 +113,11 @@
 {% endblock %}
 {% block scripts%}
 <!--scripts after body here-->
-<script src="/js/jquery.mask.min.js" type="text/javascript"></script>
+<script src="/js/listProdutos.js" type="text/javascript"></script>
+<!--<script src="/js/jquery.mask.min.js" type="text/javascript"></script>
+
 <script src="/js/bootstrap-datepicker.js" type="text/javascript"></script>
+
 <script type="text/javascript">
     $(document).ready(function () {
         $("#dataabertura").datepicker({
@@ -156,5 +142,5 @@
 
     $('#horaabertura').mask(maskBehavior, spOptions);
     });
-</script>
+</script>-->
 {% endblock %}
