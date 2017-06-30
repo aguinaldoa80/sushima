@@ -29,6 +29,10 @@ $rotas->add('produtos', new Route('/admin/produtos', array('_controller' =>
     'MeuProjeto\Controllers\ProdutoController',
     '_method' => 'produtos')));
 
+$rotas->add('updateListAndroid', new Route('/updateListAndroid', array('_controller' =>
+    'MeuProjeto\Controllers\ProdutoController',
+    '_method' => 'listProductsToUpdateAndroid')));
+
 $rotas->add('cadastroprodutos', new Route('/admin/cadastro_produtos', array('_controller' =>
     'MeuProjeto\Controllers\ProdutoController',
     '_method' => 'cadastro_produtos')));

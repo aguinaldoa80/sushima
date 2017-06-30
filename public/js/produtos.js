@@ -8,7 +8,9 @@ $("#descricao").keyup(function () {
     var valor = $("#descricao").val().replace(/[^a-zA-Z 0-9 /-]+/g, '');
     $("#descricao").val(valor);
 });
-
+$("#btnRemoveImagem").on('click touchstart', function () {
+    $("#imagemproduto").attr("src","");
+});
 function readUrlFromImage(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();

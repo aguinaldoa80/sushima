@@ -42,6 +42,11 @@ class ProdutoController {
     }
 
     public function manageProdutos() {
+        if (!UserModel::getUser()) {
+            $re = new RedirectResponse('/login');
+            $re->send();
+            return;
+        }
         if ($_POST['option'] == 'buscaProdutos') {
             $modeloProduto = new ProdutoModel();
             echo($modeloProduto->listAllProducts());
@@ -92,6 +97,12 @@ class ProdutoController {
         }
         $erro['naoinseriu'] = "Erro ao inserir, contate o administrador do sistema.";
         echo json_encode($erro);
+    }
+
+    public function listProductsToUpdateAndroid() {
+        $model = new ProdutoModel();
+        echo($model->listAllProducts());
+//        echo json_encode("[{'id':34,'nome':'aguinaldo'},{'id':31,'nome':'aguinaldo'},{'id':32,'nome':'aguinaldo'},{'id':33,'nome':'aguinaldo'},{'id':34,'nome':'aguinaldo'}]");
     }
 
     function show($id) {

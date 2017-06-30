@@ -15,6 +15,7 @@
                             <div id=verifyImagem" class="col-md-4">
                                 <img id="imagemproduto" src='{{ produto[0].imagem }}' alt="Selecione uma imagem" class="img img-responsive" style="height: 200px; width: 200px" />    
                                 <input id="path" type='file' class="form-control" onchange="readUrlFromImage(this);" />
+                                <button type="button"  name="btnRemoveImagem" id="btnRemoveImagem" class="btn btn-warning fa-lg"><i class="fa fa-trash"></i> Remover imagem</button>
                                 <span class="help-block">
                                     <strong id="erroimagem"></strong>
                                 </span>

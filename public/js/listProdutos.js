@@ -29,16 +29,27 @@ function refreshTable() {
 function fillTable(row) {
     for (var i in row) {
         var status;
-        if(row[i].ativo == '1'){
+        if (row[i].ativo == '1') {
             status = "<i class='fa fa-2x fa-check' style='color: green;'></i>";
-        }else{
+        } else {
             status = "<i class='fa fa-2x fa-close' style='color: red;'></i>";
         }
-        $("#conteudo").append("<tr><td style='width: 90px'><img class='img img-resopnsive'"+
-         " style='height: 72px; width: 72px' src='"+row[i].imagem+"'</img></td><td style='vertical-align: middle;'>"+row[i].produto+
-         "</td><td style='vertical-align: middle;'>"+row[i].descricao+"</td><td style='vertical-align: middle;'>"+row[i].preco+"</td><td style='vertical-align: middle;' class='text-center'>"+status+"</td><td style='vertical-align: middle;'>"+
-         "<a id='btnEdit' class='btn btn-primary fa fa-pencil' href='/admin/produtos/"+row[i].id+"'>"+
-        "</a> <button id='btnRemove' class='btn btn-danger fa fa-trash'></button></td></tr>");
+        if (row[i].descricao == null) {
+            row[i].descricao = "";
+        }
+        if (row[i].imagem == null) {
+            row[i].imagem = "";
+        }
+        $("#conteudo").append("<tr><td style='width: 90px'><img class='img img-resopnsive'" +
+                " style='height: 72px; width: 72px' src='" + row[i].imagem + "'</img></td><td style='vertical-align: middle;'>" + row[i].produto +
+                "</td><td style='vertical-align: middle;'>" + row[i].descricao + "</td><td style='vertical-align: middle;'>" + row[i].preco + "</td><td style='vertical-align: middle;' class='text-center'>" + status + "</td><td style='vertical-align: middle;'>" +
+                "<a id='btnEdit' class='btn btn-primary fa fa-pencil' href='/admin/produtos/" + row[i].id + "'>" +
+                "</a> <button id='btnRemove' class='btn btn-danger fa fa-trash'></button></td></tr>");
+        if (row.length > 0) {
+            $("#detalhes").html("Total de: " + row.length + " registro(s).");
+        }else{
+            $("#detalhes").html("Nenhum registor encontrado.");
+        }
     }
 }
 function showMessage(msg) {

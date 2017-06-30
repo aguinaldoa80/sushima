@@ -17,8 +17,7 @@ class ProdutoModel {
         try {
             $sql = "";
             if ($id > 0) {
-//                $sql = "update produtos set produto = :produto', descricao = :descricao, preco = :preco, imagem = :imagem where id = :id ";
-                $sql = "update produtos set produto = :produto, descricao = :descricao, preco = :preco, imagem = :imagem where id = :id";
+                $sql = "update produtos set produto = upper(:produto), descricao = upper(:descricao), preco = :preco, imagem = :imagem where id = :id";
             } else {
                 $sql = "insert into produtos (produto, descricao, preco, imagem, ativo)"
                         . " values (upper(:produto), upper(:descricao), :preco, :imagem, 1)";
@@ -59,7 +58,7 @@ class ProdutoModel {
             $p_sql = Conexao::getInstance()->prepare($sql);
             $p_sql->execute();
 
-            $rows = $p_sql->fetchAll(PDO::FETCH_ASSOC);
+            $rows = $p_sql->fetchAll(PDO::FETCH_OBJ);
             foreach ($rows as $key => $row) {
                 $arreglo[] = $row;
             }
