@@ -2,15 +2,16 @@
 {% block scripthead %}
 <!--scripts from head here-->
 <script>
-    
+
 </script>
 {% endblock %}
 {% block panel %}
 
 <div class="container">
     <div class="row">
+  
         <div class="panel panel-primary">
-            <div class="panel-heading text-center fa-lg" style="font-family: Arial;"><strong>Cardápio</strong></div>
+            <div class="panel-heading text-center fa-lg" style="font-family: Arial;"><strong>Pedidos</strong></div>
             <div class="panel-body">
                 <div class="fa-lg">
                     <div  style="display: none;"  id="adicionarCotacao" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  aria-hidden="true">
@@ -71,37 +72,28 @@
                                 </div>
                             </div>
                         </div>
-                      
+
                     </div>
                 </div>
                 <form id = "formCadastro">
 
                     <div class="row">
-                        <div class="col-md-6">
+<!--                        <div class="col-md-6">
                             <a href="/admin/cadastro_produtos" name="btnCadastrar" id="btnCadastrar" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Cadastrar produtos</a>
-                            <!--<button type="button" name="btnCadastrar" id="btnCadastrar" data-toggle="modal" data-target="#adicionarCotacao" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Nova cotação</button>-->
+                            <button type="button" name="btnCadastrar" id="btnCadastrar" data-toggle="modal" data-target="#adicionarCotacao" class="btn btn-success fa-lg "><span class="fa fa-plus"></span> Nova cotação</button>
                         </div>
                         <div class="col-md-6">
                             <input id="pesquisa" onkeyup="search(this.value)" type="text" class="form-control datepicker" name="pesquisa" maxlength="50"  placeholder="Pesquisa" autofocus>
-                        </div>
+                        </div>-->
                     </div>
                 </form>  
                 <div class="table-responsive">
                     <table id="table" class="table table-sm table-striped table-condensed table-bordered table-hover" cellspacing="0" width="100%">
-                        <thead>
-                            <tr style="background-color: #CCCCCC">
-                                <th class="text-center">Imagem</th>
-                                <th class="text-center">Produto</th>
-                                <th class="text-center">Descrição</th>
-                                <th class="text-center">Preço</th>
-                                <th class="text-center">Status</th>
-                                <th class="text-center">Ações</th>
-                            </tr>
-                        </thead>
+
                         <tbody id="conteudo">
-                            
+
                         </tbody>
-                       
+
                     </table>
                     <span id ="detalhes" class=""></span>
                 </div>
@@ -115,34 +107,5 @@
 {% endblock %}
 {% block scripts%}
 <!--scripts after body here-->
-<script src="/js/listProdutos.js" type="text/javascript"></script>
-<!--<script src="/js/jquery.mask.min.js" type="text/javascript"></script>
-
-<script src="/js/bootstrap-datepicker.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#dataabertura").datepicker({
-            format: "dd/mm/yyyy",
-        }).mask('00/00/0000', {clearIfNotMatch: true});
-//        $("#horaabertura").mask("00:00",{ "placeholder": "hh/mm" });
-        var maskBehavior = function (val) {
-        val = val.split(":");
-        return (parseInt(val[0]) > 19)? "HZ:M0" : "H0:M0";
-    }
-
-    spOptions = {
-        onKeyPress: function(val, e, field, options) {
-            field.mask(maskBehavior.apply({}, arguments), options);
-        },
-        translation: {
-            'H': { pattern: /[0-2]/, optional: false },
-            'Z': { pattern: /[0-3]/, optional: false },
-            'M': { pattern: /[0-5]/, optional: false}
-        }
-    };
-
-    $('#horaabertura').mask(maskBehavior, spOptions);
-    });
-</script>-->
+<script src="/js/listPedidos.js" type="text/javascript"></script>
 {% endblock %}

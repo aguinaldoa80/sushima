@@ -47,9 +47,20 @@ class ProdutoController {
             $re->send();
             return;
         }
+        if($_POST['option'] == 'enableProduto'){
+            $model = new ProdutoModel();
+            $model->enableProduct($_POST['id'], $_POST['ativo']);
+            return;
+        }
         if ($_POST['option'] == 'buscaProdutos') {
             $modeloProduto = new ProdutoModel();
             echo($modeloProduto->listAllProducts());
+            return;
+        }
+        if ($_POST['option'] == 'buscaProdutosByTexto') {
+            $modeloProduto = new ProdutoModel();
+            $str = $_POST['palavra'];
+            echo($modeloProduto->listAllProductsByTexto($str));
             return;
         }
         $erro = [];
@@ -100,18 +111,19 @@ class ProdutoController {
     }
 
     public function listProductsToUpdateAndroid() {
-        $model = new ProdutoModel();
-        echo($model->listAllProducts());
-//        echo json_encode("[{'id':34,'nome':'aguinaldo'},{'id':31,'nome':'aguinaldo'},{'id':32,'nome':'aguinaldo'},{'id':33,'nome':'aguinaldo'},{'id':34,'nome':'aguinaldo'}]");
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $data = json_decode(file_get_contents("php://input"), true);
+            if($data[0]['senha'] == "123456"){
+                $model = new ProdutoModel();
+                $update = $data[0]['update'];
+                echo($model->listAllProducts2($update));
+            }
+        }
     }
 
     function show($id) {
         $prod = new ProdutoModel();
         $x = $prod->getProduto($id);
-
-//        $dados = ['bar'=>'samba'];
-//        echo json_encode($x);
-//        print_r($prod->getProduto($id));
         return $this->response->setContent($this->twig->render('cadastroprodutos.php', array('produto' => $x)));
     }
 

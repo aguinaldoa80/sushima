@@ -3,8 +3,6 @@ $(document).ready(function () {
 });
 
 function refreshTable() {
-
-
     $.ajax({
         type: 'POST',
         url: '/admin/manageProdutos',
@@ -26,13 +24,57 @@ function refreshTable() {
     });
 
 }
+$("#pesquisa").on('keyup', function (e) {
+    if (e.keyCode === 27 || e.keyCode === 13){
+        $("#pesquisa").val("");
+        refreshTable();
+    } 
+        
+})
+function search(texto) {
+    if (texto.length < 1) {
+        return;
+    }
+    var str = "'%" + texto.toUpperCase() + "%'";
+    $.ajax({
+        type: 'POST',
+        url: '/admin/manageProdutos',
+        data: {
+            option: "buscaProdutosByTexto",
+            palavra: str
+        },
+        success: function (data) {
+            try {
+                var inf = JSON.parse(data);
+//            console.log(inf);
+                if (inf) {
+                    fillTable(inf);
+                }
+            } catch (err) {
+                alert("Nenhum registro encontrado com o texto " + texto);
+                $("#pesquisa").val("");
+                refreshTable();
+            }
+//            console.log(inf);
+        }
+    }).done(function (info) {
+        if (info) {
+            var jinfo = JSON.parse(info);
+            showMessage(jinfo);
+        }
+    });
+}
 function fillTable(row) {
+    $("#conteudo").html("");
     for (var i in row) {
         var status;
+        var classEnable;
         if (row[i].ativo == '1') {
             status = "<i class='fa fa-2x fa-check' style='color: green;'></i>";
+            classEnable = 'btn btn-danger fa fa-trash';
         } else {
             status = "<i class='fa fa-2x fa-close' style='color: red;'></i>";
+            classEnable = 'btn btn-success fa fa-check';
         }
         if (row[i].descricao == null) {
             row[i].descricao = "";
@@ -44,13 +86,39 @@ function fillTable(row) {
                 " style='height: 72px; width: 72px' src='" + row[i].imagem + "'</img></td><td style='vertical-align: middle;'>" + row[i].produto +
                 "</td><td style='vertical-align: middle;'>" + row[i].descricao + "</td><td style='vertical-align: middle;'>" + row[i].preco + "</td><td style='vertical-align: middle;' class='text-center'>" + status + "</td><td style='vertical-align: middle;'>" +
                 "<a id='btnEdit' class='btn btn-primary fa fa-pencil' href='/admin/produtos/" + row[i].id + "'>" +
-                "</a> <button id='btnRemove' class='btn btn-danger fa fa-trash'></button></td></tr>");
+                "</a> <button id='btnRemove' onclick='enableProduto(" + row[i].id + "," + row[i].ativo + ")' class='" + classEnable + "'></button></td></tr>");
         if (row.length > 0) {
             $("#detalhes").html("Total de: " + row.length + " registro(s).");
-        }else{
+        } else {
             $("#detalhes").html("Nenhum registor encontrado.");
         }
     }
+}
+
+function enableProduto(id, ativo) {
+    $.ajax({
+        type: 'POST',
+        url: '/admin/manageProdutos',
+        data: {
+            option: 'enableProduto',
+            id: id,
+            ativo: ativo
+        },
+        success: function (data) {
+            refreshTable();
+        },
+        beforeSend: function () {
+
+        },
+        complete: function () {
+
+        },
+        error: function (evento, request, settings) {
+            alert(settings);
+        }
+    }).done(function (data) {
+
+    });
 }
 function showMessage(msg) {
 

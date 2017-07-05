@@ -19,7 +19,16 @@ class ProdutoEntity {
     private $descricao;
     private $preco;
     private $imagem;
-    
+    private $qtde;
+    function getQtde() {
+        return $this->qtde;
+    }
+
+    function setQtde($qtde) {
+        $this->qtde = $qtde;
+    }
+
+                
     function getId() {
         return $this->id;
     }

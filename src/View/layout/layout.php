@@ -70,15 +70,15 @@
                             </li>
                             {% else %}
                             <li><a href="/login" class="fa-lg">Login <span class="fa fa-user"/></a></li>
-                            <li><a href="/cadastro" class="fa-lg">Cadastre-se <span class="fa fa-sign-in"/></a></li>
+                            <!--<li><a href="/cadastro" class="fa-lg">Cadastre-se <span class="fa fa-sign-in"/></a></li>-->
                             {% endif %}
 
                         </ul>
                         <!-- Left Side Of Navbar -->
                         <ul class="nav navbar-nav">
                             {% if AuthUser() %}
-                            <li><a href="/admin/produtos" class="fa-lg" role="button" aria-expanded="false"><i class="fa fa-shopping-basket fa-lg"></i> Cotações</a></li>
-                            <li><a href="#" class="aguinaldo fa-lg" role="button" aria-expanded="false"><i class="fa fa-group fa-lg"></i> Fornecedores</a></li>
+                            <li><a href="/admin/produtos" class="fa-lg" role="button" aria-expanded="false"><i class="fa fa-cutlery fa-lg"></i> Cardápio</a></li>
+                            <li><a href="/admin/pedidos" class="aguinaldo fa-lg" role="button" aria-expanded="false"><i class="fa fa-group fa-lg"></i> Pedidos</a></li>
                             <li><a href="#" class="fa-lg aguinaldo" role="button" aria-expanded="false"><i class="fa fa-pie-chart"></i> Relatórios</a></li>
                             {% endif %}
                         </ul>

@@ -1,13 +1,13 @@
 $('#preco').mask('0.000,00', {reverse: true});
 //        $("#marca").mask('A#',{placeholder: "__/__/____"});
-$("#produto").keyup(function () {
-    var valor = $("#produto").val().replace(/[^a-zA-Z 0-9 /-]+/g, '');
-    $("#produto").val(valor);
-});
-$("#descricao").keyup(function () {
-    var valor = $("#descricao").val().replace(/[^a-zA-Z 0-9 /-]+/g, '');
-    $("#descricao").val(valor);
-});
+//$("#produto").keyup(function () {
+//    var valor = $("#produto").val().replace(/[^a-zA-Z 0-9 /-]+/g, '');
+//    $("#produto").val(valor);
+//});
+//$("#descricao").keyup(function () {
+//    var valor = $("#descricao").val().replace(/[^a-zA-Z 0-9 /-]+/g, '');
+//    $("#descricao").val(valor);
+//});
 $("#btnRemoveImagem").on('click touchstart', function () {
     $("#imagemproduto").attr("src","");
 });

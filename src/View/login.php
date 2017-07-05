@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <div class="col-md-12 col-md-offset-3">
                                 <button type="button"  name="btnLogin" id="btnLogin" class="btn btn-primary">Entrar</button>
-                                <a  name="btnCadastrar" id="btnCadastrar" href="/cadastro" class="btn btn-success">Quero me cadastrar</a>
+                                <!--<a  name="btnCadastrar" id="btnCadastrar" href="/cadastro" class="btn btn-success">Quero me cadastrar</a>-->
                             </div>
                         </div>
                     </form>
